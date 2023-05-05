@@ -115,8 +115,10 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-source /opt/ros/noetic/setup.bash
 
+if [ -f "/opt/ros/noetic/setup.bash" ]; then
+source /opt/ros/noetic/setup.bash
+fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/cyn/softwares/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
