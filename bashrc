@@ -160,7 +160,3 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 alias 'gb=git branch'
-<<<<<<< HEAD
-=======
-
->>>>>>> 7ba0c47869af2ea8a30a7d8079968ffd84e2d842
