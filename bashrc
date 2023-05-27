@@ -144,7 +144,6 @@ source /home/cyn/.config/broot/launcher/bash/br
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/clash.sh
-
 # --- alias ---
 alias '..=cd ..'
 alias '...=cd ../..'
@@ -153,3 +152,4 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 alias 'gb=git branch'
+source /opt/ros/foxy/setup.bash
