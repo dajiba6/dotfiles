@@ -116,9 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ -f "/opt/ros/noetic/setup.bash" ]; then
-source /opt/ros/noetic/setup.bash
-fi
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/cyn/softwares/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -139,8 +136,19 @@ export SCENARIO_RUNNER_ROOT=/home/cyn/CARLA/carla_leadboard/scenario_runner
 export LEADERBOARD_ROOT=/home/cyn/CARLA/carla_leadboard/leaderboard
 export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${LEADERBOARD_ROOT}":"${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg":${PYTHONPATH}
 
-source /home/cyn/.config/broot/launcher/bash/br
+# ============= my_source ================
+# --- ROS ---
+#if [ -f "/opt/ros/noetic/setup.bash" ]; then
+#source /opt/ros/noetic/setup.bash
+#fi
 
+export ROS_DOMAIN_ID=66
+
+if [ -f "/opt/ros/foxy/setup.bash" ]; then
+source /opt/ros/foxy/setup.bash
+fi
+
+source /home/cyn/.config/broot/launcher/bash/br
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/clash.sh
@@ -152,4 +160,7 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 alias 'gb=git branch'
-source /opt/ros/foxy/setup.bash
+<<<<<<< HEAD
+=======
+
+>>>>>>> 7ba0c47869af2ea8a30a7d8079968ffd84e2d842
