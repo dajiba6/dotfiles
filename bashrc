@@ -136,10 +136,11 @@ export SCENARIO_RUNNER_ROOT=/home/cyn/CARLA/carla_leadboard/scenario_runner
 export LEADERBOARD_ROOT=/home/cyn/CARLA/carla_leadboard/leaderboard
 export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${LEADERBOARD_ROOT}":"${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg":${PYTHONPATH}
 
-# ============= my_source ================
-# --- ROS ---
+# ============= my_shit ===============
+# ------ ROS ------
 #if [ -f "/opt/ros/noetic/setup.bash" ]; then
 export ROS_DOMAIN_ID=66
+export ROS_LOCALHOST_ONLY=1
 #source /opt/ros/noetic/setup.bash
 #fi
 
@@ -148,9 +149,11 @@ source /opt/ros/foxy/setup.bash
 fi
 
 source /home/cyn/.config/broot/launcher/bash/br
+#------ Qt ------
+export QT_DEBUG_PLUGINS=1
 # =============== my_scripts ================
 # --- clash ---
-source ~/dotfiles/clash.sh
+source ~/dotfiles/scripts/clash.sh
 
 # --- alias ---
 alias '..=cd ..'
