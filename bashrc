@@ -144,6 +144,8 @@ export ROS_LOCALHOST_ONLY=1
 #source /opt/ros/noetic/setup.bash
 #fi
 
+export ROS_DOMAIN_ID=66
+
 if [ -f "/opt/ros/foxy/setup.bash" ]; then
 source /opt/ros/foxy/setup.bash
 fi
@@ -163,4 +165,3 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 alias 'gb=git branch'
-
