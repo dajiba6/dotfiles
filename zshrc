@@ -130,6 +130,9 @@ export LEADERBOARD_ROOT=/home/cyn/CARLA/carla_leadboard/leaderboard
 export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${LEADERBOARD_ROOT}":"${CARLA_ROOT}/PythonAPI/carla/dist/carla-0.9.13-py3.7-linux-x86_64.egg":${PYTHONPATH}
 
 # ============= my_shit ===============
+# ------ z.lua -------
+eval "$(lua  ~/.oh-my-zsh/plugins/z.lua/z.lua --init zsh enhanced once echo)"
+
 # ------ ROS ------
 #if [ -f "/opt/ros/noetic/setup.bash" ]; then
 export ROS_DOMAIN_ID=66
@@ -157,4 +160,3 @@ alias 'ghostscript=gs' # 不知道啥软件，会占用gs这个命令
 alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
-alias 'gb=git branch'
