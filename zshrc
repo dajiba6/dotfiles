@@ -148,6 +148,9 @@ fi
 source /home/cyn/.config/broot/launcher/bash/br
 #------ Qt ------
 export QT_DEBUG_PLUGINS=1
+# =============== my_start ================
+# ------ dictionary ------
+# goldendict &
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/scripts/clash.sh
@@ -159,3 +162,4 @@ alias 'ghostscript=gs' # 不知道啥软件，会占用gs这个命令
 alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
+export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
