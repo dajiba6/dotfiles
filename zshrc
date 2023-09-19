@@ -130,7 +130,8 @@ export PYTHONPATH="${CARLA_ROOT}/PythonAPI/carla/":"${SCENARIO_RUNNER_ROOT}":"${
 
 # ============= my_shit ===============
 # ------ z.lua -------
-eval "$(lua  ~/.oh-my-zsh/plugins/z.lua/z.lua --init zsh enhanced once echo)"
+
+eval "$(lua  ~/.oh-my-zsh/custom/plugins/z.lua/z.lua --init zsh enhanced once echo)"
 
 # ------ ROS ------
 #if [ -f "/opt/ros/noetic/setup.bash" ]; then
