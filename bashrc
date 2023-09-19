@@ -153,6 +153,8 @@ fi
 source /home/cyn/.config/broot/launcher/bash/br
 #------ Qt ------
 export QT_DEBUG_PLUGINS=1
+# ------ z.lua ------
+
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/scripts/clash.sh
