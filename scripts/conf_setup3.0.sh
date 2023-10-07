@@ -102,5 +102,6 @@ esac
 
 # Set git editor to Vim
 git config --global core.editor vim
+echo -e "${YELLOW}Switching git editor to VIM..."
 
 echo -e "${LIGHT_GREEN}Configuration completed.${RESET_COLOR}"
