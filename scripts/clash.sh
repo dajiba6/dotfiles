@@ -6,30 +6,78 @@ cfw(){
 	
 }
 
+
 nw(){
-	proxy_mode=$(gsettings get org.gnome.system.proxy mode)
-	if [[ $# -eq 0 ]]; then
-	if [[ $proxy_mode == "'none'" ]]; then
-	  gsettings set org.gnome.system.proxy mode 'manual'
-	  echo "Switched to manual mode"
-	else
-	  gsettings set org.gnome.system.proxy mode 'none'
-	  echo "Switched to none mode"
-	fi
-	elif [[ $1 == "m" ]]; then
-	  gsettings set org.gnome.system.proxy mode 'manual'
-	  echo "Switched to manual mode"
-	elif [[ $1 == "n" ]]; then
-	  gsettings set org.gnome.system.proxy mode 'none'
-	  echo "Switched to none mode"
-	elif [[ $1 == "s" ]]; then
-	  export https_proxy=192.168.0.245:7890 && export http_proxy=192.168.0.245:7890	
-	  echo "terminal network set"
-	elif [[ $1 == "c" ]]; then
-	  unset https_proxy && unset http_proxy
-	  echo "terminal networl cancel"
-	  else
-	  echo "Invalid argument. Usage: proxy-switcher [m|n|s|c]"
-	fi
+
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+YELLOW='\033[1;33m'
+RESET='\033[0m'
+
+switch_to_manual() {
+    gsettings set org.gnome.system.proxy mode 'manual'
+    echo -e "${GREEN}Switched to manual mode${RESET}"
 }
 
+switch_to_none() {
+    gsettings set org.gnome.system.proxy mode 'none'
+    echo -e "${GREEN}Switched to none mode${RESET}"
+}
+
+set_terminal_proxy_custom_company() {
+    export https_proxy=192.168.0.245:7890
+    export http_proxy=192.168.0.245:7890
+    echo -e "${YELLOW}Company terminal proxy set${RESET}"
+}
+
+set_terminal_proxy_custom_mine() {
+    export https_proxy=localhost:7890
+    export http_proxy=localhost:7890
+    echo -e "${YELLOW}Custom terminal proxy set${RESET}"
+}
+
+cancel_terminal_proxy() {
+    unset https_proxy
+    unset http_proxy
+    echo -e "${RED}Terminal proxy canceled${RESET}"
+}
+
+print_help() {
+    echo "Usage: nw [mode]"
+    echo "Options:"
+    echo "  h     Show this help message"
+    echo "Modes:"
+    echo "  1      Switch network to manual"
+    echo "  2      Switch network to none"
+    echo "  3      Set company terminal proxy"
+    echo "  4      Set my terminal proxy"
+    echo "  5      Cancel terminal proxy"
+}
+
+# Parse command-line arguments
+case $1 in
+    -h)
+        print_help
+        ;;
+    1)
+        switch_to_manual
+        ;;
+    2)
+        switch_to_none
+        ;;
+    3)
+        set_terminal_proxy_custom_company
+        ;;
+    4)
+        set_terminal_proxy_custom_mine
+        ;;
+    5)
+        cancel_terminal_proxy
+        ;;
+    *)
+        echo "Error: Invalid option. Use 'nw -h' for help."
+
+        ;;
+esac
+
+}
