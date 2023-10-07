@@ -6,23 +6,25 @@ LIGHT_GREEN='\033[1;32m'
 YELLOW='\033[1;33m'
 # Reset the color back to normal
 RESET_COLOR='\033[0m'
+# Set the ANSI escape code for green color
+GREEN='\033[36m'
 
 # Array of configurations to symlink (format: source:target)
 configs_Linux=(
-  "../zshrc:~/.zshrc"
-  "../vimrc:~/.vimrc"
-  "../bashrc:~/.bashrc"
+  "zshrc:.zshrc"
+  "vimrc:.vimrc"
+  "bashrc:.bashrc"
 )
 
 configs_Mac=(
-  "../zshrc_Mac:~/.zshrc"
-  "../vimrc:~/.vimrc"
-  "../bashrc:~/.bashrc"
+  "zshrc_Mac:.zshrc"
+  "vimrc:.vimrc"
+  "bashrc:.bashrc"
 )
 
 # Backup existing configuration files
 backup_configs() {
-  local backup_dir=~/backup_config_$(date +"%Y%m%d_%H%M%S")
+  local backup_dir="${HOME}/backup_config_$(date +"%Y%m%d_%H%M%S")"
   mkdir -p "$backup_dir"
 
   local config_array=("$@")  # Use the passed array as the config_array
@@ -32,9 +34,9 @@ backup_configs() {
     local target_file="${config#*:}"
     
     # Backup existing configuration files (if they exist)
-    if [ -e "$target_file" ]; then
-      echo -e "${YELLOW}Backing up existing $target_file..."
-      mv "$target_file" "$backup_dir/"
+    if [ -e "$HOME/$target_file" ]; then
+      echo -e "${GREEN}Backing up existing ${HOME}/$target_file..."
+      mv "${HOME}/$target_file" "$backup_dir/"
     fi
   done
 }
@@ -43,11 +45,18 @@ backup_configs() {
 create_symlinks() {
   local config_array=("$@")  # Use the passed array as the config_array
 
-  for config in "${configs[@]}"; do
+  for config in "${config_array[@]}"; do
     local source_file="${config%%:*}"
     local target_file="${config#*:}"
 
-    ln -s "$HOME/dotfile/$source_file" "$target_file"
+    # Check if the target file or symlink exists
+    if [ -e "$HOME/$target_file" ] || [ -L "$HOME/$target_file" ]; then
+      echo -e "${YELLOW}Removing existing $HOME/$target_file..."
+      rm -rf "$HOME/$target_file"
+    fi
+
+    ln -s "$HOME/dotfiles/$source_file" "$HOME/$target_file"
+    echo -e "${GREEN}Created symbolic link: $HOME/$target_file -> $HOME/dotfiles/$source_file"
   done
 }
 
