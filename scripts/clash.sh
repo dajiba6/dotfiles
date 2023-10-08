@@ -1,18 +1,19 @@
 #!/bin/bash
-
+# =============================================================
 cfw(){
 	cd /home/cyn/tools/clash
 	./cfw -d
 	
 }
 
-
+# =============================================================
 nw(){
-
+CYAN="\033[1;36m"
 GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[1;33m'
 RESET='\033[0m'
+LIGHT_GREEN="\033[1;32m"
 
 switch_to_manual() {
     gsettings set org.gnome.system.proxy mode 'manual'
@@ -43,22 +44,18 @@ cancel_terminal_proxy() {
 }
 
 print_help() {
-    echo "Usage: nw [mode]"
-    echo "Options:"
-    echo "  h     Show this help message"
+    echo -e "${CYAN}Usage: nw [mode]"
     echo "Modes:"
-    echo "  1      Switch network to manual"
+    echo -e "${LIGHT_GREEN}  1      Switch network to manual"
     echo "  2      Switch network to none"
     echo "  3      Set company terminal proxy"
     echo "  4      Set my terminal proxy"
-    echo "  5      Cancel terminal proxy"
+    echo -e "  5      Cancel terminal proxy${RESET}"
 }
 
 # Parse command-line arguments
 case $1 in
-    -h)
-        print_help
-        ;;
+
     1)
         switch_to_manual
         ;;
@@ -75,7 +72,7 @@ case $1 in
         cancel_terminal_proxy
         ;;
     *)
-        echo "Error: Invalid option. Use 'nw -h' for help."
+        print_help
 
         ;;
 esac
