@@ -1,3 +1,4 @@
+zmodload zsh/zprof 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -159,8 +160,6 @@ source ~/dotfiles/scripts/clash.sh
 # --- alias ---
 alias '..=cd ..'
 alias '...=cd ../..'
-alias 'ghostscript=gs' # 不知道啥软件，会占用gs这个命令
-alias 'gs=git status'
-alias 'gll=git log --all --graph --decorate'
-alias 'gl=git log --all --graph --oneline'
+alias 'glll=git log --all --graph --decorate'
+alias 'gll=git log --all --graph --oneline'
 export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
