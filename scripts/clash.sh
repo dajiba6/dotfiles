@@ -32,8 +32,8 @@ set_terminal_proxy_custom_company() {
 }
 
 set_terminal_proxy_custom_mine() {
-    export https_proxy=localhost:7890
-    export http_proxy=localhost:7890
+    export https_proxy=127.0.0.1:7890
+    export http_proxy=127.0.0.1:7890
     echo -e "${YELLOW}Custom terminal proxy set${RESET}"
 }
 
