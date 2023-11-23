@@ -7,7 +7,7 @@ cfw(){
 }
 
 ob(){
-  cd $HOME/dotfiles/app
+  cd $HOME/tools/Obsidian
   ./Obsidian-1.4.16.AppImage
 }
 
