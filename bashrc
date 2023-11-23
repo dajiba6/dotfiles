@@ -167,3 +167,8 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 alias 'gb=git branch'
+
+#------ pyenv ------
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

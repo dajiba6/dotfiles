@@ -163,3 +163,8 @@ alias '...=cd ../..'
 alias 'glll=git log --all --graph --decorate'
 alias 'gll=git log --all --graph --oneline'
 export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
+
+#------ pyenv ------
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
