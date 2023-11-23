@@ -1,9 +1,14 @@
 #!/bin/bash
 # =============================================================
 cfw(){
-	cd /home/cyn/tools/clash
+	cd $HOME/tools/clash
 	./cfw -d
 	
+}
+
+ob(){
+  cd $HOME/dotfiles/app
+  ./Obsidian-1.4.16.AppImage
 }
 
 # =============================================================
