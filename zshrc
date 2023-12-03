@@ -1,3 +1,4 @@
+zmodload zsh/zprof 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -155,6 +156,7 @@ export QT_DEBUG_PLUGINS=1
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/scripts/clash.sh
+<<<<<<< HEAD
 # --- alias ---
 alias '..=cd ..'
 alias '...=cd ../..'
@@ -163,3 +165,17 @@ alias 'gs=git status'
 alias 'gll=git log --all --graph --decorate'
 alias 'gl=git log --all --graph --oneline'
 export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
+=======
+
+# --- alias ---
+alias '..=cd ..'
+alias '...=cd ../..'
+alias 'glll=git log --all --graph --decorate'
+alias 'gll=git log --all --graph --oneline'
+export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
+
+#------ pyenv ------
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+>>>>>>> 03a1258ab55a98f39d7eac2b71c0a33b446cbf97
