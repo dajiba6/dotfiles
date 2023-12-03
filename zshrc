@@ -155,7 +155,6 @@ export QT_DEBUG_PLUGINS=1
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/scripts/clash.sh
-
 # --- alias ---
 alias '..=cd ..'
 alias '...=cd ../..'
