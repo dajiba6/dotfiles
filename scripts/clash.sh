@@ -7,10 +7,11 @@ cfw(){
 }
 
 ob(){
-
+  cd $HOME/Documents/cyn_vault
   if [ "$1" = "l" ]; then
-    cd $HOME/Documents/cyn_vault
     git pull
+  elif [ "$1" = "p" ]; then
+    git push
   else
     cd $HOME/tools/Obsidian
     ./Obsidian-1.4.16.AppImage
