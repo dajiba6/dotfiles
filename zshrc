@@ -108,6 +108,11 @@ export MANPATH="/usr/local/man:$MANPATH"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# >>> miniconda init >>>
+# install miniconda for pytroch
+  eval "$(/home/cyn/miniconda3/bin/conda shell.zsh hook)"
+
+
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -143,9 +148,13 @@ export ROS_LOCALHOST_ONLY=1
 
 export ROS_DOMAIN_ID=66
 
-if [ -f "/opt/ros/foxy/setup.bash" ]; then
+if [ -f "/opt/ros/foxy/setup.zsh" ]; then
 source /opt/ros/foxy/setup.zsh
 fi
+if [ -f "/opt/ros/noetic/setup.zsh" ]; then
+source /opt/ros/noetic/setup.zsh
+fi
+
 
 source /home/cyn/.config/broot/launcher/bash/br
 #------ Qt ------
@@ -165,6 +174,12 @@ alias 'gll=git log --all --graph --oneline'
 export APOLLO_ROOT_DIR=/home/cyn/CARLA/apollo
 
 #------ pyenv ------
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/cyn/google-cloud-sdk/path.zsh.inc' ]; then . '/home/cyn/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/cyn/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/cyn/google-cloud-sdk/completion.zsh.inc'; fi

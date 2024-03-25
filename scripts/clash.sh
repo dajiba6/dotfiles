@@ -14,7 +14,7 @@ ob(){
     git push
   else
     cd $HOME/tools/Obsidian
-    ./Obsidian-1.4.16.AppImage
+    ./Obsidian-1.5.11.AppImage
   fi
 }
 
