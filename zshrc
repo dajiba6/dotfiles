@@ -162,6 +162,7 @@ export QT_DEBUG_PLUGINS=1
 # =============== my_start ================
 # ------ dictionary ------
 # goldendict &
+git config --global oh-my-zsh.hide-status 1
 # =============== my_scripts ================
 # --- clash ---
 source ~/dotfiles/scripts/clash.sh
