@@ -18,6 +18,10 @@ ob(){
   fi
 }
 
+lm(){
+  cd $HOME/tools/LM_studio
+  ./LM_Studio-0.2.31.AppImage
+}
 # =============================================================
 nw(){
 CYAN="\033[1;36m"
@@ -94,3 +98,14 @@ esac
 # flameshot() {
 #   ~/tools/flameshot/Flameshot-12.1.0.x86_64.AppImage gui
 # }
+# ====================================================
+svnstatus() {
+    svn status | while read -r line; do
+        case "$line" in
+            A*) echo -e "\033[32m$line\033[0m" ;;  # Added files in green
+            D*) echo -e "\033[31m$line\033[0m" ;;  # Deleted files in red
+            M*) echo -e "\033[33m$line\033[0m" ;;  # Modified files in yellow
+            * ) echo "$line" ;;  # Default case, no color
+        esac
+    done
+}

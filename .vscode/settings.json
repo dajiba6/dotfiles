@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#91919169",
+    "tab.hoverBackground": "#c2c2c279",
+    "tab.hoverForeground": "#ffffff",
+    "tab.hoverBorder": "#ffffff",
+    "activityBar.background": "#3E2823",
+    "titleBar.activeBackground": "#563930",
+    "titleBar.activeForeground": "#FCFAF9"
+  }
+}
